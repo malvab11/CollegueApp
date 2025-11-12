@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CollegueApp</string>
+
+    <string name="onboarding_title_1">Welcome to Workmate!</string>
+    <string name="onboarding_sub_title_1">Make Smart Decisions! Set clear timelines for projects and celebrate your achievements!</string>
+    <string name="onboarding_title_2">Manage Stress Effectively</string>
+    <string name="onboarding_sub_title_2">Stay Balanced! Track your workload and maintain a healthy stress level with ease.</string>
+    <string name="onboarding_title_3">Plan for Success</string>
+    <string name="onboarding_sub_title_3">Your Journey Starts Here! Earn achievement badges as you conquer your tasks. Let’s get started!</string>
+    <string name="onboarding_title_4">Navigate Your Work Journey Efficient and Easy</string>
+    <string name="onboarding_sub_title_4">Increase your work management and career development radically</string>
+    <string name="onboarding_button_next">Next</string>
+    <string name="onboarding_button_skip">Skip</string>
+    <string name="onboarding_button_sign_in">Sign In</string>
+    <string name="onboarding_button_return">Return</string>
+
+    <string name="auth_title">Bienvenido de Nuevo</string>
+    <string name="auth_sub_title">Inicia sesión para continuar</string>
+    <string name="auth_input_1_label">Correo / Usuario</string>
+    <string name="auth_input_1_placeholder">Ingresa tu correo o usuario</string>
+    <string name="auth_input_2_label">Contraseña</string>
+    <string name="auth_input_2_placeholder">Ingresa tu contraseña</string>
+    <string name="auth_forgot_password">Olvide mi Contraseña</string>
+    <string name="auth_sign_in_button">Iniciar Sesión</string>
+    <string name="auth_loading">Verificando Usuario.....</string>
+
+</resources>
