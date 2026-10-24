@@ -27,7 +27,7 @@ import com.example.collegueapp.presentation.students.screens.schedule.StudentSch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun StudentNavigation() {
+fun StudentNavigation(onLogout: () -> Unit) {
 
     val studentNavController = rememberNavController()
 
@@ -65,7 +65,14 @@ fun StudentNavigation() {
             navController = studentNavController,
             startDestination = StudentRoutes.Home.route
         ) {
-            composable(StudentRoutes.Home.route) { StudentHomeScreen(paddingValues = innerPadding, horizontalPadding= 12.dp, userId = "x") }
+            composable(StudentRoutes.Home.route) {
+                StudentHomeScreen(
+                    paddingValues = innerPadding,
+                    horizontalPadding = 12.dp,
+                    userId = "x",
+                    onLogout = onLogout
+                )
+            }
             composable(StudentRoutes.Grades.route) { StudentGradesScreen(paddingValues = innerPadding, horizontalPadding= 12.dp) }
             composable(StudentRoutes.Schedule.route) { StudentScheduleScreen(paddingValues = innerPadding , horizontalPadding= 12.dp) }
             composable(StudentRoutes.Notification.route) { StudentNotificationScreen(paddingValues = innerPadding , horizontalPadding= 12.dp) }

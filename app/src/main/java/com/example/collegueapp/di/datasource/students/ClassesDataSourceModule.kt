@@ -6,6 +6,7 @@ import com.example.collegueapp.data.remote.datasource.student.classes.ClassesDat
 import com.example.collegueapp.data.remote.services.student.classes.ClassesApiServices
 import com.example.collegueapp.domain.datasources.student.classes.ClassesDataSource
 import com.google.firebase.firestore.FirebaseFirestore
+import dagger.Lazy
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,12 +28,12 @@ object ClassesDataSourceModule {
     @Provides
     @Singleton
     fun provideClassesDataSource(
-        firestore: FirebaseFirestore,
+        firestore: Lazy<FirebaseFirestore>,
         classesApiServices: ClassesApiServices,
     ): ClassesDataSource {
         return when (DATA_SOURCE) {
             ClassDataSource.MOCK -> ClassesDataSourceMockImpl()
-            ClassDataSource.FIREBASE -> ClassesDataSourceFirebaseImpl(firestore = firestore)
+            ClassDataSource.FIREBASE -> ClassesDataSourceFirebaseImpl(firestore = firestore.get())
             ClassDataSource.RETROFIT -> ClassesDataSourceRetrofitImpl(classesApiServices = classesApiServices)
         }
     }

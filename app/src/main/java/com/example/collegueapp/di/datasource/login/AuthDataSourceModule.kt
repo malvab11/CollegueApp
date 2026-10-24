@@ -7,6 +7,7 @@ import com.example.collegueapp.data.remote.services.login.AuthApiServices
 import com.example.collegueapp.domain.datasources.login.AuthDataSource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import dagger.Lazy
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,12 +30,12 @@ object AuthDataSourceModule {
     @Singleton
     fun provideAuthDataSource(
         authApiServices: AuthApiServices,
-        auth: FirebaseAuth,
-        firestore: FirebaseFirestore,
+        auth: Lazy<FirebaseAuth>,
+        firestore: Lazy<FirebaseFirestore>,
     ): AuthDataSource {
         return when (DATA_SOURCE) {
             AuthSource.MOCK -> AuthDataSourceMockImpl()
-            AuthSource.FIREBASE -> AuthDataSourceFirebaseImpl(auth = auth, firestore = firestore)
+            AuthSource.FIREBASE -> AuthDataSourceFirebaseImpl(auth = auth.get(), firestore = firestore.get())
             AuthSource.RETROFIT -> AuthDataSourceRetrofitImpl(authApiServices = authApiServices)
         }
     }

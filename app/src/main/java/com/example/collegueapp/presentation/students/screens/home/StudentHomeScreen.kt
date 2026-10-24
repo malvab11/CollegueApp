@@ -21,11 +21,13 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.Logout
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -52,6 +54,7 @@ fun StudentHomeScreen(
     paddingValues: PaddingValues,
     horizontalPadding: Dp,
     userId: String,
+    onLogout: () -> Unit,
     studentsViewModel: StudentsViewModel = hiltViewModel()
 ) {
 
@@ -70,8 +73,9 @@ fun StudentHomeScreen(
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         DashboardTopBar(
-            userName = "Alex",
-            dateText = "Lunes, 28 de octubre",
+            userName = "Marlon",
+            dateText = "Lunes, 24 de octubre",
+            onLogout = onLogout,
         )
 
         when (uiState) {
@@ -89,10 +93,10 @@ fun StudentHomeScreen(
         TasksCard()
         RecentGradesCard(
             listOf(
-                GradeItem("Ciencias", "Reporte de Lab.", "9.5 / 10", Success),
-                GradeItem("Literatura", "Análisis de Libro", "8.0 / 10", Primary),
-                GradeItem("Arte", "Proyecto de Escultura", "10 / 10", Success),
-                GradeItem("Educación Física", "Examen práctico", "8.5 / 10", Primary)
+                GradeItem("Ciencias", "Reporte de Lab.", "14 / 20", Success),
+                GradeItem("Literatura", "Análisis de Libro", "12 / 20", Primary),
+                GradeItem("Arte", "Proyecto de Escultura", "10 / 20", Success),
+                GradeItem("Educación Física", "Examen práctico", "8.5 / 20", Primary)
             )
         )
     }
@@ -101,8 +105,9 @@ fun StudentHomeScreen(
 
 @Composable
 fun DashboardTopBar(
-    userName: String = "Alex",
-    dateText: String = "Lunes, 28 de octubre",
+    onLogout: () -> Unit,
+    userName: String = "Marlon",
+    dateText: String = "Lunes, 24 de octubre",
 ) {
     Row(
         modifier = Modifier
@@ -111,7 +116,7 @@ fun DashboardTopBar(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Column {
+        Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = "Hola, $userName",
                 style = MaterialTheme.typography.displayLarge,
@@ -123,12 +128,21 @@ fun DashboardTopBar(
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
-        IconButton(onClick = {}) {
-            Icon(
-                imageVector = Icons.Outlined.Notifications,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.onBackground
-            )
+        Row {
+            IconButton(onClick = {}) {
+                Icon(
+                    imageVector = Icons.Outlined.Notifications,
+                    contentDescription = "Notificaciones",
+                    tint = MaterialTheme.colorScheme.onBackground
+                )
+            }
+            IconButton(onClick = onLogout) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Outlined.Logout,
+                    contentDescription = "Cerrar sesión",
+                    tint = MaterialTheme.colorScheme.onBackground
+                )
+            }
         }
     }
 }
@@ -289,7 +303,7 @@ fun TasksCard() {
                 )
             }
         }
-        Divider()
+        HorizontalDivider()
 
         Spacer(Modifier.height(16.dp))
 
