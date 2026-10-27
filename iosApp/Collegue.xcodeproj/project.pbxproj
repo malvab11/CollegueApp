@@ -1,0 +1,34 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
+ objects = {
+  A40000000000000000000001 = {isa = PBXBuildFile; fileRef = A40000000000000000000002;};
+  A40000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collegue.framework; path = Collegue.framework; sourceTree = KOTLIN_FRAMEWORK_DIR;};
+  A30000000000000000000001 = {isa = PBXBuildFile; fileRef = A30000000000000000000002;};
+  A30000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>";};
+  A20000000000000000000001 = {isa = PBXBuildFile; fileRef = A20000000000000000000002;};
+  A20000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>";};
+  A10000000000000000000001 = {isa = PBXBuildFile; fileRef = A10000000000000000000002;};
+  A10000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegueApp.swift; sourceTree = "<group>";};
+  A10000000000000000000003 = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Collegue.app; sourceTree = BUILT_PRODUCTS_DIR;};
+  A10000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>";};
+  A10000000000000000000005 = {isa = PBXGroup; children = (A10000000000000000000006, A10000000000000000000007, A40000000000000000000002); sourceTree = "<group>";};
+  A10000000000000000000006 = {isa = PBXGroup; children = (A10000000000000000000002, A10000000000000000000004, A20000000000000000000002, A30000000000000000000002); path = Collegue; sourceTree = "<group>";};
+  A10000000000000000000007 = {isa = PBXGroup; children = (A10000000000000000000003); name = Products; sourceTree = "<group>";};
+  A10000000000000000000008 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001); runOnlyForDeploymentPostprocessing = 0;};
+  A10000000000000000000009 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A40000000000000000000001); runOnlyForDeploymentPostprocessing = 0;};
+  A1000000000000000000000A = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A20000000000000000000001, A30000000000000000000001); runOnlyForDeploymentPostprocessing = 0;};
+  A1000000000000000000000B = {isa = PBXShellScriptBuildPhase; alwaysOutOfDate = 1; buildActionMask = 2147483647; files = (); inputPaths = (); outputPaths = ("$(KOTLIN_FRAMEWORK_DIR)/Collegue.framework/Collegue"); name = "Build shared Kotlin framework"; runOnlyForDeploymentPostprocessing = 0; shellPath = /bin/sh; shellScript = "if [ \"$SKIP_KOTLIN_FRAMEWORK_BUILD\" = \"YES\" ]; then exit 0; fi\ncd \"$SRCROOT/..\"\nexport DEVELOPER_DIR=\"${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";};
+  A1000000000000000000000C = {isa = PBXNativeTarget; buildConfigurationList = A10000000000000000000010; buildPhases = (A1000000000000000000000B, A10000000000000000000008, A10000000000000000000009, A1000000000000000000000A); buildRules = (); dependencies = (); name = Collegue; productName = Collegue; productReference = A10000000000000000000003; productType = "com.apple.product-type.application";};
+  A1000000000000000000000D = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 2700; TargetAttributes = {A1000000000000000000000C = {CreatedOnToolsVersion = 27.1;};};}; buildConfigurationList = A1000000000000000000000F; compatibilityVersion = "Xcode 14.0"; developmentRegion = es; hasScannedForEncodings = 0; knownRegions = (es, en, Base); mainGroup = A10000000000000000000005; productRefGroup = A10000000000000000000007; projectDirPath = ""; projectRoot = ""; targets = (A1000000000000000000000C);};
+  A1000000000000000000000F = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000011, A10000000000000000000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A10000000000000000000010 = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000013, A10000000000000000000014); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  A10000000000000000000011 = {isa = XCBuildConfiguration; name = Debug; buildSettings = {SDKROOT = iphoneos; ARCHS = arm64; ONLY_ACTIVE_ARCH = YES; ENABLE_DEBUG_DYLIB = NO; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; DEBUG_INFORMATION_FORMAT = dwarf; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; ENABLE_USER_SCRIPT_SANDBOXING = NO;};};
+  A10000000000000000000012 = {isa = XCBuildConfiguration; name = Release; buildSettings = {SDKROOT = iphoneos; ARCHS = arm64; ONLY_ACTIVE_ARCH = YES; ENABLE_DEBUG_DYLIB = NO; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; SWIFT_OPTIMIZATION_LEVEL = "-O"; ENABLE_USER_SCRIPT_SANDBOXING = NO;};};
+  A10000000000000000000013 = {isa = XCBuildConfiguration; name = Debug; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; PRODUCT_BUNDLE_IDENTIFIER = pe.horizonte.collegue; PRODUCT_NAME = Collegue; PRODUCT_MODULE_NAME = CollegueIOS; INFOPLIST_FILE = Collegue/Info.plist; TARGETED_DEVICE_FAMILY = "1,2"; CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = ""; ENABLE_PREVIEWS = YES; "FRAMEWORK_SEARCH_PATHS" = ("$(inherited)", "$(KOTLIN_FRAMEWORK_DIR)"); "KOTLIN_FRAMEWORK_DIR" = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"; OTHER_LDFLAGS = ("$(inherited)", "-lsqlite3", "-lc++"); LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");};};
+  A10000000000000000000014 = {isa = XCBuildConfiguration; name = Release; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; PRODUCT_BUNDLE_IDENTIFIER = pe.horizonte.collegue; PRODUCT_NAME = Collegue; PRODUCT_MODULE_NAME = CollegueIOS; INFOPLIST_FILE = Collegue/Info.plist; TARGETED_DEVICE_FAMILY = "1,2"; CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = ""; "FRAMEWORK_SEARCH_PATHS" = ("$(inherited)", "$(KOTLIN_FRAMEWORK_DIR)"); "KOTLIN_FRAMEWORK_DIR" = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"; OTHER_LDFLAGS = ("$(inherited)", "-lsqlite3", "-lc++"); LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");};};
+ };
+ rootObject = A1000000000000000000000D;
+}

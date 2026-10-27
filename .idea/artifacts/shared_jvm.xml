@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+    <artifact name="shared-jvm" type="jar">
+        <output-path>$PROJECT_DIR$/shared/build/libs</output-path>
+        <root name="shared-jvm.jar" id="archive">
+            <element name="CollegueApp.shared.jvmMain" id="module-output" />
+        </root>
+    </artifact>
+</component>

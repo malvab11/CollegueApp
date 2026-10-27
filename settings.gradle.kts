@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "CollegueApp"
-include(":app")
+include(":app", ":shared")
  
